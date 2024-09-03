@@ -22,7 +22,9 @@
     top: -60%;
     right: -50%;
 }
-
+.im{
+    display: none;
+}
 #toggle {
     display: none;
 }
@@ -35,23 +37,51 @@
 
 .container-fluid {
     border-bottom: 2px solid #fff;
-    height: 80px;
+    padding: 20px 0px;
 }
-
+.three{
+    display: flex;
+    gap: 20px;
+}
+.two{
+    display: flex;
+    gap: 25px;
+}
 @media screen and (max-width: 768px) {
+    .container-fluid {
+        flex-wrap: wrap;
+    }
     .two {
-        position: absolute;
-        text-align: center;
-        top: 10px;
-        right: -100%;
+        /* order: 2; */
         width: 100%;
-        transition: all 0.4s;
-        flex-direction: column; /* Ensure items stack vertically */
-        gap: 1rem;
-        background-color: white; /* Add background color if needed */
-        padding: 1rem; /* Add some padding if needed */
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        gap: 0;
+    }
+    
+    .three {
+        display: none;
+    }
+    .im {
+        display: block;
+    }
+    .item{
+        width: 100%;
+        text-align: center;
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .item:hover{
+        width: 100%;
+        background-color: rgb(223, 239, 239);
+        transition:  all 0.6s;
     }
     #toggle:checked ~ .two {
-        right: 0;
+        display: flex;
+        transition: flex 5s;
+        background-color: rgb(218, 224, 224);
+        padding: 10px 0px;
     }
 }
+
