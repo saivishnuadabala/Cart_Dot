@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart::after {
+    content: '2';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: -60%;
+    right: -50%;
+}
+
+#toggle {
+    display: none;
+}
+
+.item:hover {
+    color: red;
+    transition: color 0.4s;
+    cursor: pointer;
+}
+
+.container-fluid {
+    border-bottom: 2px solid #fff;
+    height: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .two {
+        position: absolute;
+        text-align: center;
+        top: 10px;
+        right: -100%;
+        width: 100%;
+        transition: all 0.4s;
+        flex-direction: column; /* Ensure items stack vertically */
+        gap: 1rem;
+        background-color: white; /* Add background color if needed */
+        padding: 1rem; /* Add some padding if needed */
+    }
+    #toggle:checked ~ .two {
+        right: 0;
+    }
+}
